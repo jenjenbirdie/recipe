@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  category1: MyString
+  category2: MyString
+  category3: MyString
+  duration: 1
+  description: MyText
+  image_url: MyString
+  kidsMenu: false
+  glutenFree: false
+  ingredients: MyText
+  direction: MyText
+
+two:
+  title: MyString
+  category1: MyString
+  category2: MyString
+  category3: MyString
+  duration: 1
+  description: MyText
+  image_url: MyString
+  kidsMenu: false
+  glutenFree: false
+  ingredients: MyText
+  direction: MyText

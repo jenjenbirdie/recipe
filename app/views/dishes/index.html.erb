@@ -1,0 +1,40 @@
+<div id="dish_list">
+<h1>Listing Dishes</h1>
+
+<table>
+ 
+<tr>
+	<b><td>Title</td>
+	<td>Category 1</td>
+	<td>Category 2</td>
+	<td>Category 3</td>
+	<td>Duration</td>
+	<td>Kid's Menu</td>
+	<td>Gluten Free</td>
+	<td>Comment</td></b>
+</tr>
+
+<% @dishes.each do |dish| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= link_to dish.title, dish %></td>
+    <td><%= link_to dish.category1, dish %></td>
+    <td><%= link_to dish.category2, dish %></td>
+    <td><%= link_to dish.category3, dish %></td>
+    <td><%= link_to dish.duration, dish %></td>
+    <td><%= dish.kidsMenu %></td>
+    <td><%= dish.glutenFree %></td>
+    <td><%= dish.description %></td>
+    <td class = "list_actions">
+		<%= link_to 'Show', dish %>
+		<%= link_to 'Edit', edit_dish_path(dish) %>
+		<%= link_to 'Destroy', dish, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<br />
+
+<%= link_to 'New Dish', new_dish_path %>

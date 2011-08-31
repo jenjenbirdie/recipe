@@ -1,0 +1,62 @@
+<%= form_for(@dish) do |f| %>
+  <% if @dish.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this dish from being saved:</h2>
+
+      <ul>
+      <% @dish.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= label_tag "Category 1" %><br />
+    <%= f.select :category1, Dish::CATEGORY1_TYPES,
+		:prompt => 'Choose a value' %>
+  </div>
+  <div class="field">
+    <%= label_tag "Category 2" %><br />
+    <%= f.select :category2, Dish::CATEGORY2_TYPES,
+		:prompt => 'Choose a value' %>
+  </div>
+  <div class="field">
+    <%= label_tag  "Category 3" %><br />
+    <%= f.select :category3, Dish::CATEGORY3_TYPES,
+		:prompt => 'Choose a value' %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= label_tag "Kid's Menu" %>
+    <%= f.check_box :kidsMenu %><br />
+    <%= f.label "Gluten Free" %>
+    <%= f.check_box :glutenFree %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredients %><br />
+    <%= f.text_area :ingredients %>
+  </div>
+  <div class="field">
+    <%= f.label :direction %><br />
+    <%= f.text_area :direction %>
+  </div>
+  <div class="field">
+    <%= label_tag "Comment" %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
