@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @dish.title %>
+</p>
+
+<p>
+  <b>Category1:</b>
+  <%= @dish.category1 %>
+</p>
+
+<p>
+  <b>Category2:</b>
+  <%= @dish.category2 %>
+</p>
+
+<p>
+  <b>Category3:</b>
+  <%= @dish.category3 %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @dish.duration %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @dish.image_url %>
+</p>
+
+<p>
+  <b>Kidsmenu:</b>
+  <%= @dish.kidsMenu %>
+</p>
+
+<p>
+  <b>Glutenfree:</b>
+  <%= @dish.glutenFree %>
+</p>
+
+<p>
+  <b>Ingredients:</b>
+  <%= @dish.ingredients %>
+</p>
+
+<p>
+  <b>Direction:</b>
+  <%= @dish.direction %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @dish.description %>
+</p>
+
+<%= link_to 'Edit', edit_dish_path(@dish) %> |
+<%= link_to 'Back', dishes_path %>
