@@ -1,5 +1,8 @@
 Recipe::Application.routes.draw do
-  resources :dishes
+  resources :dishes do
+	resources :comments
+  end
+  resources :users
   
   get "dishes/index"
 
