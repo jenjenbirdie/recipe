@@ -1,6 +1,8 @@
 class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.xml
+  before_filter :authenticate, :except => [:index, :show]
+  
   def index
     @dishes = Dish.all
 

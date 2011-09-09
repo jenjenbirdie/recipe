@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController  
-before_filter :load_dish 
+before_filter :load_dish
+#, :except => :destroy
+#before_filter :authenticate, :only => :destroy
 
 def create    
 	@comment = @dish.comments.new(params[:comment])    
@@ -11,6 +13,7 @@ def create
 end    
 
 def destroy    
+	#@dish = current_user.dishes.find(params[:dish_id])
 	@comment = @dish.comments.find(params[:id])    
 	@comment.destroy    
 	redirect_to @dish, :notice => 'Comment deleted'  

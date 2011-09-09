@@ -8,7 +8,7 @@
 </h3>  
 <div id="dishes">
 <%= dish.category1%>, <%= dish.category2 %>, <%= dish.category3%> <br/>
-Ingredients: <%= dish.ingredients %> <br/>
-Direction: <%= dish.direction%>
+Ingredients: <%= simple_format dish.ingredients %> <br/>
+Direction: <%= simple_format dish.direction%>
 </div>
 <% end %>
