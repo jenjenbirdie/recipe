@@ -36,14 +36,15 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
-    @dish = Dish.find(params[:id])
+    #@dish = Dish.find(params[:id])
+	@dish = current_user.dishes.find(params[:id])
   end
 
   # POST /dishes
   # POST /dishes.xml
   def create
-    @dish = Dish.new(params[:dish])
-
+    #@dish = Dish.new(params[:dish])
+	@dish = current_user.dishes.new(params[:dish])
     respond_to do |format|
       if @dish.save
         format.html { redirect_to(@dish, :notice => 'Dish was successfully created.') }
@@ -58,8 +59,8 @@ class DishesController < ApplicationController
   # PUT /dishes/1
   # PUT /dishes/1.xml
   def update
-    @dish = Dish.find(params[:id])
-
+    #@dish = Dish.find(params[:id])
+	@dish = current_user.dishes.find(params[:id])
     respond_to do |format|
       if @dish.update_attributes(params[:dish])
         format.html { redirect_to(@dish, :notice => 'Dish was successfully updated.') }
@@ -74,7 +75,8 @@ class DishesController < ApplicationController
   # DELETE /dishes/1
   # DELETE /dishes/1.xml
   def destroy
-    @dish = Dish.find(params[:id])
+    #@dish = Dish.find(params[:id])
+	@dish = current_user.dishes.find(params[:id])
     @dish.destroy
 
     respond_to do |format|

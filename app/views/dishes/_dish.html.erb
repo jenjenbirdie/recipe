@@ -1,10 +1,12 @@
 <%= div_for dish do %>  
 <h3>    
 	<%= link_to dish.title, dish %>    
-	<span class='actions'>      
-		<%= link_to "Edit", edit_dish_path(dish) %>     
-		<%= link_to "Delete", dish, :confirm => "Are you sure?", :method => :delete %>
-	</span>  
+	<% if dish.owned_by? current_user %>
+		<span class='actions'>      
+			<%= link_to "Edit", edit_dish_path(dish) %>     
+			<%= link_to "Delete", dish, :confirm => "Are you sure?", :method => :delete %>
+		</span>  
+	<% end %>
 </h3>  
 <div id="dishes">
 <%= dish.category1%>, <%= dish.category2 %>, <%= dish.category3%> <br/>

@@ -1,9 +1,12 @@
 <%= div_for comment do %>  
     <p>
-	<%= comment.name %> &lt;<%= comment.email %>&gt; said:      
-	<%= comment.body %>
-	<span class='actions'>      
-		<%= link_to 'Delete', [@dish, comment], :confirm => 'Are you sure?', :method => :delete %>    
-	</span>
+	<%= comment.name %> &lt;<%= comment.email %>&gt; said:    
+	<% if @dish.owned_by? current_user %>
+		<%= comment.body %>
+		<span class='actions'>      
+			<%= link_to 'Delete', [@dish, comment], :confirm => 'Are you sure?', :method => :delete %>    
+		</span>
+	<% end %>
 	</p>
 <% end %>
+
