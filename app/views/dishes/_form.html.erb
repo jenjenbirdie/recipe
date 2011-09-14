@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :class => 'title' %>
   </div>
   <div class="field">
     <%= label_tag "Category 1" %><br />
@@ -31,7 +31,7 @@
 		:prompt => 'Choose a value' %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br />
+    <%= label_tag "Cooking Duration (min)" %><br />
     <%= f.text_field :duration %>
   </div>
   <div class="field">
@@ -41,6 +41,8 @@
   <div class="field">
     <%= label_tag "Kid's Menu" %>
     <%= f.check_box :kidsMenu %><br />
+  </div>
+  <div class="field">
     <%= f.label "Gluten Free" %>
     <%= f.check_box :glutenFree %>
   </div>
@@ -57,6 +59,7 @@
     <%= f.text_area :description %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%# <%= f.submit %> 
+	<%= submit_or_cancel(f) %>
   </div>
 <% end %>

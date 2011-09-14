@@ -9,8 +9,8 @@
 	<% end %>
 </h3>  
 <div id="dishes">
-<%= dish.category1%>, <%= dish.category2 %>, <%= dish.category3%> <br/>
-Ingredients: <%= simple_format dish.ingredients %> <br/>
-Direction: <%= simple_format dish.direction%>
+<%= dish.category1%>, <%= dish.category2 %>, <%= dish.category3 %> <br/>
+Ingredients: <%= simple_format dish.ingredients %> 
+Cooking Duration (min): <%= dish.duration %>
 </div>
 <% end %>
