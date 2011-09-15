@@ -4,7 +4,8 @@ class DishesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   
   def index
-    @dishes = Dish.all
+    #@dishes = Dish.all
+	@dishes = Dish.paginate :page=>params[:page], :order => 'title', :per_page => 4
 
     respond_to do |format|
       format.html # index.html.erb
