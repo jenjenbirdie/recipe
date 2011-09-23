@@ -31,6 +31,11 @@
 		:prompt => 'Choose a value' %>
   </div>
   <div class="field">
+    <%= label_tag  "Effort Level" %><br />
+    <%= f.select :effort_level, Dish::EFFORT_TYPES,
+		:prompt => 'Choose a value' %>
+  </div>
+  <div class="field">
     <%= label_tag "Cooking Duration (min)" %><br />
     <%= f.text_field :duration %>
   </div>
