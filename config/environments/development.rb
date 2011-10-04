@@ -22,5 +22,11 @@ Recipe::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
-end
+  
+  #Paperclip.options[:command_path] = 'C:/program files (x86)/ImageMagick-6.7.2-Q16'
+  Paperclip.options[:command_path] = 'C:/program files (x86)/ImageMagick-6.5.6-Q8'
+  #Paperclip.options[:command_path] = "/c/windows/system32/"
+  
+ # Paperclip.options[:image_magick_path] = 'C:/program files (x86)/ImageMagick-6.5.6-Q8'
 
+end
